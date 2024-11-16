@@ -9,16 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            HomePage() // Navigate to Home Page
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            
+            ViewHistoryPage() // Navigate to View History Page
+                .tabItem {
+                    Label("History", systemImage: "clock.arrow.circlepath")
+                }
+            
+            ChatbotPage() // Navigate to Chatbot Page
+                .tabItem {
+                    Label("Chatbot", systemImage: "message")
+                }
         }
-        .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }
